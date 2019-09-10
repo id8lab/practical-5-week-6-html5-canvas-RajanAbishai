@@ -1,0 +1,75 @@
+<html>
+<head>
+<title>“My First Canvas”</title>
+<link rel= "stylesheet" type = "text/css" href="canvasstyle.css">
+</head>
+
+<body onload="drawOnLoad()">
+
+<canvas id="mycvs" height="200" width="200" style="border:10px solid #d3d3d3;"> 
+
+</canvas>
+
+
+<button onClick="drawOnLoad()" value=""> Click me! </button>
+<button onClick="clearRect()" value=""> Clear rect! </button>
+<button onclick="drawRect()" value=""> Draw rect! </button>
+<button onClick="update()" value=""> Update! </button>
+
+</body>
+<script type="text/javascript">
+
+var canvas = document.getElementById("mycvs");
+var ctx = canvas.getContext("2d");
+
+function drawOnLoad(){
+
+
+ctx.fillStyle = 'rgb(0,0,255)';
+ctx.fillRect(20,20, 100, 50);
+
+ctx.fillStyle = 'rgba(255, 0, 0, 0.5)'; 
+ctx.beginPath();
+ctx.arc(120, 50, 10, 0, 2*Math.PI) ;
+ctx.stroke();
+
+
+
+
+
+
+}
+
+function clearRect(){
+
+ctx.clearRect(0, 0, 200, 200); //canvas width, canvas height (last 2)
+}
+
+var x=0;
+var xSpeed=2;
+
+function drawRect(){
+
+ctx.fillStyle = 'rgb(0,0,255)';
+ctx.fiilRect(0, 100, 10, 10);
+ctx.stroke();
+
+
+}
+
+function update(){
+//ctx.clearRect(0,0, 200, 200); //canvas width, canvas height (last 2)
+drawRect();
+x += xSpeed;
+ctx.fillRect(x, 100, 10, 10);
+
+}
+
+setInterval(update, 1000/60) //The time there is for 60FPS
+
+
+
+
+</script>
+
+</html>
