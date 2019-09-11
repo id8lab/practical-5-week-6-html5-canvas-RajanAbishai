@@ -1,0 +1,3 @@
+Click the 'Begin Animation!' button to begin drawing a cat.
+
+Click the 'Stop Animation!' button to stop.
